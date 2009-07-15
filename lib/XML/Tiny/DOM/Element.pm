@@ -16,7 +16,7 @@ use overload
     'bool' => sub { 1 },
     ;
 
-$VERSION = '1.0';
+$VERSION = '1.1';
 
 =head1 NAME
 
@@ -144,11 +144,17 @@ sub _gettext {
     my $self = shift;
     my $c = $self->{content};
     if(
-        ref($c) eq 'ARRAY' && # there's some contents
+        ref($c) eq 'ARRAY' &&
+        defined($c->[0]->{type}) &&
         $c->[0]->{type} eq 't' # it's a text node
     ) {
         (my $value = $c->[0]->{content}) =~ s/^\s+|\s+$//g;
         return $value;
+    } elsif(
+        ref($c) eq 'ARRAY' &&
+        (keys %{$c->[0]}) == 0 # empty node
+    ) { # empty element stringifies to ''
+        return '';
     } else {
         die("Can't stringify '".$self->{name}."' in ".ref($self)."\n");
     }
