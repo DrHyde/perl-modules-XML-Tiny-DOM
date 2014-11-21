@@ -12,3 +12,4 @@ t/rsnapshot.conf.xml
 MANIFEST
 t/empty-element.t
 t/empty-element.xml
+MANIFEST.SKIP
