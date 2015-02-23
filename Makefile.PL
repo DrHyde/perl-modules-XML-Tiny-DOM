@@ -4,8 +4,9 @@ WriteMakefile(
     NAME         => 'XML::Tiny::DOM',
     META_MERGE => {
         license => 'other',
-        resource => {
-	    repository => 'https://github.com/DrHyde/perl-modules-XML-Tiny-DOM'
+        resources => {
+	    repository => 'https://github.com/DrHyde/perl-modules-XML-Tiny-DOM',
+	    bugtracker => 'https://github.com/DrHyde/perl-modules-XML-Tiny-DOM/issues'
         }
     },
     VERSION_FROM => 'lib/XML/Tiny/DOM.pm', # finds $VERSION
