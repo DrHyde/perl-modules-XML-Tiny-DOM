@@ -3,7 +3,7 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
     NAME         => 'XML::Tiny::DOM',
     META_MERGE => {
-        license => 'other',
+        license => 'open_source',
         resources => {
 	    repository => 'https://github.com/DrHyde/perl-modules-XML-Tiny-DOM',
 	    bugtracker => 'https://github.com/DrHyde/perl-modules-XML-Tiny-DOM/issues'
